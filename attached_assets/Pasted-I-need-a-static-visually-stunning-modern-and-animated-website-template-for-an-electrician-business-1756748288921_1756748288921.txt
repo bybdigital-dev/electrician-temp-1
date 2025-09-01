@@ -1,0 +1,68 @@
+I need a static visually stunning, modern, and animated website template for an electrician business called "Riakona Electrical Solutions and Projects". The website must grab attention immediately with impactful visuals, professional animations, and a bold design that represents power, reliability, and innovation.
+
+Here are the sections that must be included:
+
+Home Page / Hero Section:
+
+A full-screen hero banner with animated electrical effects (e.g., subtle sparks, glowing lines, or animated wiring visuals).
+
+Business name: "Riakona Electrical Solutions and Projects"
+
+Tagline: “We do everything Electrical – from installations to fault finding.”
+
+CTA buttons: “Get a Quote” and “View Our Work”
+
+About Us Section:
+
+Brief, compelling intro:
+“Riakona Electrical Solutions and Projects provides a wide range of electrical services to fit your needs. We specialize in domestic and residential maintenance, fault finding, and installations.”
+
+Services Section:
+
+Grid layout with animated icons or hover effects
+
+Services:
+
+Domestic Electrical Work
+
+Residential Maintenance
+
+Fault Finding & Repairs
+
+New Installations
+
+Compliance Certificates
+
+Emergency Call-Outs
+
+Past Projects Section:
+
+Image gallery or project cards with hover animations or lightbox effect
+
+Brief descriptions, project locations, and outcomes
+
+Customer Reviews Section:
+
+Carousel or fade-in testimonial layout
+
+Include 3–5 example reviews with star ratings and client names
+
+Contact Page / Section:
+
+Clean and responsive contact form with name, email, phone, and message fields
+
+Optional map (showing service area)
+
+Contact details block with phone, email, and operating hours
+
+Sticky navigation with animated scroll behavior
+
+Animations: Smooth fade-ins, parallax sections, button hover effects, subtle electrical-themed transitions
+
+Color palette: Use bold, high-contrast colors (deep blue, white, yellow/orange for accents) to reflect energy and professionalism
+
+Mobile-responsive and accessible
+
+Make the code easy to edit and structured in components if using a framework like React or Next.js. Ensure assets and styles are organized. Use placeholder text/images where needed.
+
+The website must be fully static, only html, css and js.

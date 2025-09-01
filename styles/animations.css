@@ -1,0 +1,395 @@
+/* Electrical Background Animations */
+.circuit-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(90deg, rgba(255, 193, 7, 0.1) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 193, 7, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: circuitFlow 20s linear infinite;
+}
+
+.sparks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sparks::before,
+.sparks::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--accent-yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-yellow);
+    animation: sparkMove 3s linear infinite;
+}
+
+.sparks::before {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.sparks::after {
+    top: 60%;
+    right: 15%;
+    animation-delay: 1.5s;
+}
+
+/* Power Symbol Animation */
+.power-symbol {
+    animation: powerPulse 2s ease-in-out infinite;
+}
+
+.power-symbol i {
+    animation: boltFlicker 1.5s ease-in-out infinite alternate;
+}
+
+/* Scroll Animations */
+.scroll-arrow {
+    animation: bounce 2s infinite;
+}
+
+/* Service Card Hover Effects */
+.service-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.service-icon {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 30px rgba(255, 193, 7, 0.3);
+}
+
+/* Project Card Animations */
+.project-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-placeholder i {
+    animation: projectFloat 3s ease-in-out infinite;
+}
+
+/* Stats Counter Animation */
+.stat-number {
+    transition: all 0.3s ease;
+}
+
+.stat:hover .stat-number {
+    transform: scale(1.1);
+    color: var(--accent-orange);
+}
+
+/* Button Hover Effects */
+.btn {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Navigation Animation */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-yellow);
+    transform: translateY(-2px);
+}
+
+/* Section Fade In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form Focus Effects */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(26, 35, 126, 0.1);
+}
+
+/* Review Card Transitions */
+.review-card {
+    transition: all 0.5s ease;
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+.review-card.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Loading Spinner for Contact Form */
+.btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btn.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Keyframe Animations */
+@keyframes circuitFlow {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(50px) translateY(50px);
+    }
+}
+
+@keyframes sparkMove {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(200px, 100px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes powerPulse {
+    0%, 100% {
+        box-shadow: 0 0 50px rgba(255, 193, 7, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 80px rgba(255, 193, 7, 0.5);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes boltFlicker {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 30px rgba(255, 193, 7, 0.8), 0 0 40px rgba(255, 152, 0, 0.3);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+@keyframes projectFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation Delays for Staggered Effects */
+.service-card:nth-child(1) {
+    animation: fadeInScale 0.6s ease 0.1s both;
+}
+
+.service-card:nth-child(2) {
+    animation: fadeInScale 0.6s ease 0.2s both;
+}
+
+.service-card:nth-child(3) {
+    animation: fadeInScale 0.6s ease 0.3s both;
+}
+
+.service-card:nth-child(4) {
+    animation: fadeInScale 0.6s ease 0.4s both;
+}
+
+.service-card:nth-child(5) {
+    animation: fadeInScale 0.6s ease 0.5s both;
+}
+
+.service-card:nth-child(6) {
+    animation: fadeInScale 0.6s ease 0.6s both;
+}
+
+/* Project Cards Staggered Animation */
+.project-card:nth-child(1) {
+    animation: slideInUp 0.6s ease 0.1s both;
+}
+
+.project-card:nth-child(2) {
+    animation: slideInUp 0.6s ease 0.2s both;
+}
+
+.project-card:nth-child(3) {
+    animation: slideInUp 0.6s ease 0.3s both;
+}
+
+.project-card:nth-child(4) {
+    animation: slideInUp 0.6s ease 0.4s both;
+}
+
+/* Hero Text Animation */
+.hero-title {
+    animation: slideInLeft 1s ease 0.5s both;
+}
+
+.hero-tagline {
+    animation: slideInLeft 1s ease 0.7s both;
+}
+
+.hero-buttons {
+    animation: slideInLeft 1s ease 0.9s both;
+}
+
+.hero-visual {
+    animation: slideInRight 1s ease 0.6s both;
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+    .hero-title,
+    .hero-tagline,
+    .hero-buttons,
+    .hero-visual {
+        animation: fadeInScale 1s ease 0.3s both;
+    }
+    
+    .service-card,
+    .project-card {
+        animation: fadeInScale 0.6s ease both;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .power-symbol,
+    .sparks::before,
+    .sparks::after,
+    .circuit-lines,
+    .scroll-arrow {
+        animation: none !important;
+    }
+}
